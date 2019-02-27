@@ -8,13 +8,14 @@ import matplotlib.pyplot as plt
 from matplotlib import animation
 import math
 import time
+import random
 
 def cadence():         #return cadence
-    c=5                #cadence value
+    c = 5                #cadence value
     return c
 
 def power(j):           #return power
-    p=10               #power value
+    p = random.randint(0,10)               #power value
     return p
 
 def excel():
@@ -28,7 +29,7 @@ def excel():
     match = os.path.exists("D:/EDP Programming/Cycling Session " + str(n)+".xlsx")
 
     while match==True:
-        n=n+1
+        n = n + 1
         match = os.path.exists("D:/EDP Programming/Cycling Session " + str(n)+".xlsx")
 
     #Names File
@@ -47,7 +48,7 @@ def excel():
     sheet1.write(0, 1, 'Cadence (rpm)')
     sheet1.write(0, 2, 'Power (W)')
 
-    i=1                #time iterator
+    i = 1                #time iterator
 
     #take cadence and power values initially
 
@@ -56,7 +57,7 @@ def excel():
     sheet1.write(i, 0, i)
     sheet1.write(i, 1, cadence())
     sheet1.write(i, 2, power())
-    i=i+1
+    i = i + 1
         #create loop here to update cadence and power
 
 
